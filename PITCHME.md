@@ -15,7 +15,7 @@ list.stream()
     .map(String::toUpperCase)
     .forEach(System.out::println);
 ```
-@3(うほっ？)
+@[3](うほっ？)
 
 ---
 
