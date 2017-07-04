@@ -10,12 +10,12 @@ Etaについて
 Etaとは
 ===
 
-Etaは次のような特徴を持つ言語です
+Etaは次のような特徴を持つJVM言語です
 
 * 静的多相型付け
-* 代数敵データ型のサポート
 * 純粋関数型
 * 遅延評価戦略
+* 代数的データ型のサポート
 * Hindley/Milner型推論
 * JVM上で動作
 
@@ -26,7 +26,7 @@ Etaは次のような特徴を持つ言語です
 
 ---
 
-Haskellですね
+つまり<br/>Haskell
 ===
 
 * EtaはHaskellの一つの方言です
@@ -66,10 +66,16 @@ Etaの仕組み
 Etaのその他の特徴
 ===
 
-* JVM言語なのでもちろんJavaのクラス・メソッドを使えます
-* JavaのクラスをHaskell(Eta)の型で定義
-* メソッドをHaskell(Eta)の関数で定義
-* メソッドの呼び出しは `Java` モナドにつつまれる
+* Java、Haskell相互に利用可能
+  * Java -> Haskell
+    * Java SE APIをHaskellから利用
+    * maven artifact を Haskellから利用
+  * Haskell -> Java
+    * Haskell標準ライブラリーをJavaから利用
+    * Hackage ライブラリーを Javaから利用
+* Uber Jar を生成
+  * Hackage/Haskell標準ライブラリーをJarにコンパイル
+  * それらとアプリケーションをまとめて一つの実行可能Jarにパッケージング
 
 ---
 
