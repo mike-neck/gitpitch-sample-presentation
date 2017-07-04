@@ -63,8 +63,7 @@ Etaの仕組み
 
 ---
 
-Etaのその他の特徴
-===
+### Etaでできること
 
 * Java、Haskell相互に利用可能
   * Java -> Haskell
@@ -79,8 +78,7 @@ Etaのその他の特徴
 
 ---
 
-EtaでJavaを呼び出し
-===
+### EtaでJavaを呼び出し
 
 ```haskell
 data {-# CLASS "java.nio.file.Path" #-} Path =
