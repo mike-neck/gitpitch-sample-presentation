@@ -42,12 +42,14 @@
 
 #### 言わずと知れたセーブコマンド
 
----?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_before.png&size=auto 90%
+>>>?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_before.png&size=auto 90%
 
 ### `^` + `Enter`
 
----?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_after.png&size=auto 90%
+>>>?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_after.png&size=auto 90%
 
-### saveされる
+### saveされた＼(^o^)／
 
+---
 
+2. 
