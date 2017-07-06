@@ -44,7 +44,11 @@
 
 ---?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_before.png&size=auto 90%
 
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_before.png&size=auto 90%
+
 ### `^` + `Enter`
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_after.png&size=auto 90%
 
 ---?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_after.png&size=auto 90%
 
@@ -52,4 +56,24 @@
 
 ---
 
-2. 
+2. 中身を手早く確認したい
+===
+
+---
+
+## `→`
+
+### リストページでチケットを確認
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/2_detail_in_list_before.png&size=auto 90%
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/2_detail_in_list_before.png&size=auto 90%
+
+### `→`
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/2_detail_in_list_after.png&size=auto 90%
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/2_detail_in_list_after.png&size=auto 90%
+
+### リストから詳細を確認できる
+
