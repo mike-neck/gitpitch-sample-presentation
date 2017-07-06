@@ -33,7 +33,7 @@
 
 ---
 
-1. 最もよく使うショートカット
+1. 最もよく使う
 ===
 
 ---
@@ -76,4 +76,25 @@
 ---?image=2017-07-08-okayama-OR-mapper-LT/assets/2_detail_in_list_after.png&size=auto 90%
 
 ### リストから詳細を確認できる
+
+3. どこにいても
+===
+
+### `^` + `N`
+
+#### 新規イシュー登録
+
+* JetBrains系IDEを使っていると新しいコンポーネントなどを作る時に使うやつ
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/3_create_new_before.png&size=auto 90%
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/3_create_new_before.png&size=auto 90%
+
+### `^` + `N`
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/3_create_new_after.png&size=auto 90%
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/3_create_new_after.png&size=auto 90%
+
+### 新しいイシュー登録画面
 
