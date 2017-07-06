@@ -35,7 +35,12 @@
 
 ---
 
-## 1. `^` + `Enter`
+## 1.
+
+---
+
+`^` + `Enter`
+===
 
 ---
 
@@ -57,7 +62,12 @@
 
 ---
 
-## 2. `→`
+## 2.
+
+---
+
+`→`
+===
 
 ---
 
@@ -77,7 +87,33 @@
 
 ---
 
-### 108. `^` + `N`
+### 3.
+
+---
+
+`^` + `⌥` + `J`
+===
+
+---
+
+### コマンドダイアログ表示
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/4_command_before.png&size=auto 90%
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/4_command_before.png&size=auto 90%
+
+### `^` + `⌥` + `J`
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/4_command_after.png&size=auto 90%
+
+---
+
+### 108.
+
+---
+
+`^` + `N`
+===
 
 ---
 
