@@ -100,5 +100,3 @@
 
 ---?image=2017-07-08-okayama-OR-mapper-LT/assets/3_create_new_after.png&size=auto 90%
 
-### 新しいイシュー登録画面
-
