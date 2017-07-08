@@ -47,7 +47,7 @@
 
 #### 言わずと知れたセーブコマンド
 
-* 最も使われるショートカット大賞5年連続受賞
+* YouTrack最も使われるショートカット大賞5年連続受賞
 
 ---?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_before.png&size=auto 90%
 
@@ -59,7 +59,7 @@
 
 ---?image=2017-07-08-okayama-OR-mapper-LT/assets/1_save_after.png&size=auto 90%
 
-### セーブされた＼(^o^)／
+### イシュー登録だけでなく、コメントの保存もできます
 
 ---
 
@@ -85,7 +85,7 @@
 
 ---?image=2017-07-08-okayama-OR-mapper-LT/assets/2_detail_in_list_after.png&size=auto 90%
 
-### リストから詳細を確認できる
+### リスト画面からいちいちチケットのページに飛ばなくてもよい
 
 ---
 
@@ -108,6 +108,10 @@
 ### `^` + `⌥` + `J`
 
 ---?image=2017-07-08-okayama-OR-mapper-LT/assets/4_command_after.png&size=auto 90%
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/4_command_after.png&size=auto 90%
+
+#### 複数のチケットにカーソル当てて一括してステータス更新したい場合に重宝します
 
 ---
 
