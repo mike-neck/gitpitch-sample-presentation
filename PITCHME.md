@@ -111,6 +111,30 @@
 
 ---
 
+4.
+===
+
+---
+
+`⌘` + `V`
+===
+
+---
+
+### クリップボードから画像を添付
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/5_attach_file_before.png&size=auto 90%
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/5_attach_file_before.png&size=auto 90%
+
+### `⌘` + `V`
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/5_attach_file_after.png&size=auto 90%
+
+---?image=2017-07-08-okayama-OR-mapper-LT/assets/5_attach_file_finally.png&size=auto 90%
+
+---
+
 108.
 ===
 
@@ -149,11 +173,3 @@
 ---
 
 ### うん、知ってた
-
----
-
-### 何はともあれ
-
-* YouTrackのイシュー操作をより効率的+楽しくする二つの技
-  * クエリ
-  * ショートカット
