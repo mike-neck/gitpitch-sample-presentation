@@ -275,3 +275,76 @@ cats.stream()
 ```
 
 * `Cat#mostFavoriteFood` というレシーバーが `Cat` で引数なしのメソッドを呼び出しているので、 `[Class名]::[method名]` という形のメソッド参照に省略できる
+
+---
+
+基本的な型
+===
+
+* `Runnable` : `void -> void`
+* `Consumer<T>` : `T -> void`
+* `Supplier<T>` : `void -> T`
+* `Function<T, R>` : `T -> R`
+* `BiFunction<P, Q, R>` : `(P,Q) -> R`
+* `BiConsumer<P, Q>` : `(P,Q) -> void`
+
+---
+
+よくある疑問
+===
+
+## ラムだって単なる無名クラスの糖衣構文でしょ？
+
+---
+
+回答
+===
+
+きっとどこかでマサカリ受けるのでやめておきましょう
+
+---
+
+回答-比較
+===
+
+無名クラスとラムダ
+
+```java
+cats.stream().map(new Function<Cat,Food>(){ ... }....)
+
+cats.stream().map(Cat::mostFavoriteFood)....
+```
+
+---
+
+回答-比較
+===
+
+バイトコード見てみると(無名クラス)
+
+```
+ 8: invokeinterface #3,  1 // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+13: new           #9       // class com/example/Foo$1
+16: dup
+17: aload_0
+18: invokespecial #10      // Method com/example/Foo$1."<init>":(Lcom/example/Foo;)V
+21: invokeinterface #5,  2 // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+```
+
+---
+
+回答-比較
+===
+
+バイトコード見てみると(無名クラス)
+
+```
+ 8: invokeinterface #3,  1 // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+13: invokedynamic #4,  0   // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+18: invokeinterface #5,  2 // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+```
+
+---
+
+これであなたも明日からJava8でラムダラムダ
+===
