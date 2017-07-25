@@ -45,7 +45,7 @@ lambda式とは
 
 ---?image=images/back-1.jpg&size=auto 90%
 
-### ラムダ式登場
+# ラムダ式登場
 
 ---
 
