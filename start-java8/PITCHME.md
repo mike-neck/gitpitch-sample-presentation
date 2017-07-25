@@ -62,9 +62,97 @@ lambda式とは
 
 ```java
 public interface Gen<T> {
-  T ofRandom();
-
-  <T, R> Gen<R> map(Function<? super T, ? extends R> f);
+    // たった一つだけのabstractメソッド
+    @FunctionalInterface
+    T ofRandom();
+    // デフォルトメソッドは含まない
+    <T, R> Gen<R> map(Function<? super T, ? extends R> f) {
+        return () -> f.apply(ofRandom());
+    }
 }
 ```
+
+---
+
+練習1
+===
+
+### `java.lang.Runnable` をラムダで書いてみる
+
+```java
+final Rannable runnable = new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("にゃーん");
+    }
+};
+runnable.run();
+```
+
+---
+
+練習1-答え
+===
+
+```java
+final Rannable runnable = () -> System.out.println("にゃーん");
+runnable.run();
+```
+
+* 引数なしの場合のラムダは `() ->` ではじめる
+
+---
+
+練習2
+===
+
+### `java.util.concurrent.Callable<V>` をラムダで書いてみる
+
+```java
+final Callable<InputStream> callable = new Callable<InputStream> {
+    @Override
+    public InputStream call() throws Exception {
+        return new FileInputStream("にゃーん.jpg");
+    }
+};
+```
+
+---
+
+練習2-答え
+===
+
+```java
+final Callable<InputStream> callable = () -> {
+    return new FileInputStream("にゃーん.jpg");
+};
+```
+
+* まず、引数なしなので `() -> ` で書き始められます。
+
+---
+
+練習2-答え(2)
+===
+
+```java
+final Callable<InputStream> callable = () -> {
+    new FileInputStream("にゃーん.jpg");
+};
+```
+
+* 返されるオブジェクトは推論可能なので、 `return` を省略できます
+
+---
+
+練習2-答え(3)
+===
+
+```java
+final Callable<InputStream> callable = () -> new FileInputStream("にゃーん.jpg");
+```
+
+* 一つの式しかないのでセミコロンと `{}` 波括弧は省略できます
+
+---
 
