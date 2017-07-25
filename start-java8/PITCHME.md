@@ -141,7 +141,7 @@ final Callable<InputStream> callable = () -> {
 };
 ```
 
-* 返されるオブジェクトは推論可能なので、 `return` を省略できます
+* 1つの式しかないので `return` を省略できます
 
 ---
 
@@ -155,4 +155,27 @@ final Callable<InputStream> callable = () -> new FileInputStream("にゃーん.j
 * 一つの式しかないのでセミコロンと `{}` 波括弧は省略できます
 
 ---
+
+練習3
+===
+
+### `Consumer<V>` をラムダで書いてみます
+
+```java
+final List<Cat> cats = getCats();
+cats.forEach(new Consumer<Cat>(){
+    @Override
+    public void accept(final Cat cat) {
+        System.out.println(cat.miao());
+    }
+});
+```
+
+---
+
+練習3-答え
+===
+
+
+
 
