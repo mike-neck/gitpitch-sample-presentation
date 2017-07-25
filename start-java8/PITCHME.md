@@ -43,6 +43,28 @@ lambda式とは
 * 他のCPUに計算してもらうために計算をオブジェクトとして扱えるようにしたい
 * オブジェクトとして扱えるのはいいけど、Javaでは無名関数の作り方が尋常じゃないほど面倒くさい
 
-### そこでラムダ式が登場
+---?image=images/back-1.jpg?size=auto 90%
 
+### ラムダ式登場
+
+---
+
+ラムダ式の条件
+===
+
+* Single Abstract Method (SAM) なインターフェースであること
+  * デフォルトメソッドは含まない
+
+---
+
+例
+===
+
+```java
+public interface Gen<T> {
+  T ofRandom();
+
+  <T, R> Gen<R> map(Function<? super T, ? extends R> f);
+}
+```
 
