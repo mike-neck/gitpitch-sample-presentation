@@ -229,4 +229,49 @@ cats.forEach( cat -> System.out.println(cat.miao()));
 
 * 式が1つなので `{}` とセミコロンを省略できます
 
+---
 
+練習4
+===
+
+### `java.util.function.Function` を書いてみる
+
+```java
+final List<Cat> cats = getCats();
+cats.stream()
+    .map(new Function<Cat, Food>(){
+        @Override
+        public Food apply(Cat cat) {
+            return cat.mostFavoriteFood();
+        }
+    })
+    .collect(Collectors.toList());
+```
+
+---
+
+練習4-答え
+===
+
+```java
+final List<Cat> cats = getCats();
+cats.stream()
+    .map(cat -> cat.mostFavoriteFood())
+    .collect(Collectors.toList());
+```
+
+* これまでの問題に出てくる部分をまとめてラムダを省略しつつ書く
+
+---
+
+練習4-答え(2)
+===
+
+```java
+final List<Cat> cats = getCats();
+cats.stream()
+    .map(Cat::mostFavoriteFood)
+    .collect(Collectors.toList());
+```
+
+* `Cat#mostFavoriteFood` というレシーバーが `Cat` で引数なしのメソッドを呼び出しているので、 `[Class名]::[method名]` という形のメソッド参照に省略できる
