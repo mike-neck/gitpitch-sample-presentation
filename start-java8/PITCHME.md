@@ -43,7 +43,7 @@ lambda式とは
 * 他のCPUに計算してもらうために計算をオブジェクトとして扱えるようにしたい
 * オブジェクトとして扱えるのはいいけど、Javaでは無名関数の作り方が尋常じゃないほど面倒くさい
 
----?image=start-java8/images/back-1.jpg?size=auto 90%
+---?image=images/back-1.jpg&size=auto 90%
 
 ### ラムダ式登場
 
