@@ -177,5 +177,56 @@ cats.forEach(new Consumer<Cat>(){
 ===
 
 
+```java
+final List<Cat> cats = getCats();
+cats.forEach( (final Cat cat) -> {
+    System.out.println(cat.miao());
+});
+```
+
+* パラメーター一つの場合は書き始めを `([型名] 変数名) -> ` に省略できます
+
+---
+
+練習3-答え(2)
+===
+
+
+```java
+final List<Cat> cats = getCats();
+cats.forEach( (cat) -> {
+    System.out.println(cat.miao());
+});
+```
+
+* 引数がメソッドのシグネチャー(`List#forEach(Consumer<T>)`)から推論可能なので省略できます
+
+---
+
+練習3-答え(3)
+===
+
+
+```java
+final List<Cat> cats = getCats();
+cats.forEach( cat -> {
+    System.out.println(cat.miao());
+});
+```
+
+* 引数が1つの場合、パラメーターの前後の `()` を省略できます
+
+---
+
+練習3-答え(4)
+===
+
+
+```java
+final List<Cat> cats = getCats();
+cats.forEach( cat -> System.out.println(cat.miao()));
+```
+
+* 式が1つなので `{}` とセミコロンを省略できます
 
 
