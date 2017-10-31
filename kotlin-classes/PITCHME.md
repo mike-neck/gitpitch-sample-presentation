@@ -41,9 +41,25 @@ inline fun <A> A?.whenNotNull(f: (A) -> Unit): A? = if (this != null) this.apply
 fun <A> A?.or(g: () -> A): A = this ?: g()
 ```
 
-* A: 0個
-* B: 1個
-* C: 2個
+* A: 1個
+* B: 2個
+* C: 3個
 * D: コンパイルエラー
 
+---
 
+### 1. 正解
+
+B: 2個
+===
+
+---
+
+### 1. 解説
+
+以下の2つのファイルが作られます
+
+* `Exercise1.class`
+  * `@file:JvmName` により名前が指定される
+* `Exercise1$main$text$2.class`
+  * `inline` にしていない `or` 関数が受け取った関数のクラスが作られる
