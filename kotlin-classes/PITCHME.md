@@ -63,3 +63,33 @@ B: 2個
   * `@file:JvmName` により名前が指定される
 * `Exercise1$main$text$2.class`
   * `inline` にしていない `or` 関数が受け取った関数のクラスが作られる
+
+---
+
+第2問
+===
+
+---
+
+### 2. コンパイルした時に作られるクラスファイルの数はいくつでしょう？
+
+```kotlin
+interface NamedFile {
+    val name: String
+    val extension: String
+    fun preciseName(): String = "$name.$extension"
+    companion object {
+        fun create(name: String, extension: String): NamedFile = object : NamedFile {
+            override val name: String get() = name
+            override val extension: String get() = extension
+        }
+    }
+}
+```
+
+* A: 2個
+* B: 3個
+* C: 4個
+* D: コンパイルエラー
+
+
