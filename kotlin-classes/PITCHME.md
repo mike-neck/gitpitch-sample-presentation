@@ -27,18 +27,16 @@ Reflectionクイズ
 
 ---
 
-### 1. 次のファイルをコンパイルした時に作られる `.class` ファイルの数はいくつでしょう？
+### 1. 次のファイルをコンパイルした時に作られるクラスファイルの数はいくつでしょう？
 
 ```kotlin
 @file:JvmName("Exercise1")
-
 fun main(args: Array<String>) {
     val text = message.whenNotNull { println(it) }
             .or { "hello" }
     println("result -> $text")
 }
 val message: String? = "exercise 1"
-
 inline fun <A> A?.whenNotNull(f: (A) -> Unit): A? = if (this != null) this.apply(f) else this
 fun <A> A?.or(g: () -> A): A = this ?: g()
 ```
