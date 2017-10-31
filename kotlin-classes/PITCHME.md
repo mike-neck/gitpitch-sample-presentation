@@ -92,4 +92,26 @@ interface NamedFile {
 * C: 4個
 * D: コンパイルエラー
 
+---
+
+### 2. 正解
+
+C: 4個
+===
+
+---
+
+### 2. 解説
+
+次の4個のファイルが作られます
+
+* `NamedFile.class`
+  * インターフェースクラス
+* `NamedFile$DefaultImpls.class`
+  * インターフェースのデフォルト実装
+* `NamedFile$Companion.class`
+  * コンパニオンクラス
+* `NamedFile$Companion$create$1.class`
+  * `create` メソッドで作られるインターフェースの実装クラス
+
 
