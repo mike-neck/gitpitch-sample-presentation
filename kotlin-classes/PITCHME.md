@@ -114,4 +114,55 @@ C: 4個
 * `NamedFile$Companion$create$1.class`
   * `create` メソッドで作られるインターフェースの実装クラス
 
+---
+
+第3問
+===
+
+---
+
+### 3. コンパイルした時に作られるクラスファイルの数はいくつでしょう？
+
+```kotlin
+enum class Ord { LT, EQ, GT }
+enum class Bool(val asBoolean: Boolean) {
+    TRUE(true) { override val asInt: Int get() = 1 },
+    FALSE(false) { override val asInt: Int get() = 0 };
+    abstract val asInt: Int
+    companion object {
+        fun not(bool: Bool): Bool = when (bool) {
+            Bool.TRUE -> FALSE
+            Bool.FALSE -> TRUE
+        }
+    }
+}
+```
+
+* A: 2個
+* B: 3個
+* C: 5個
+* D: 6個
+
+---
+
+### 3. 正解
+
+D: 6個
+===
+
+---
+
+### 3. 解説
+
+1. `enum class` は一つのクラスにコンパイルされます
+  * `Ord.class`
+  * `Bool.class`
+1. ただし、 `enum entry` が実装を持つと `entry` 一つにつき一つクラスが作られる
+  * `Bool$TRUE.class`
+  * `Bool$FALSE.class`
+1. `when` に `enum class` が使われると `WhenMappings` というクラスが作られる
+  * `Bool$Companion$WhenMappings.class`
+  * `Bool$Companion.class`
+
+
 
