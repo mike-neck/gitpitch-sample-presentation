@@ -162,5 +162,29 @@ D: 5個
   * `Bool$Companion$WhenMappings.class`
   * `Bool$Companion.class`
 
+---
 
+第4問
+===
 
+---
+
+### 4. 次のコードを実行した時の表示内容はどうなる？
+
+ただし、以下のコードのファイル名は `App.kt` とする
+
+```kotlin
+fun main(args: Array<String>) {
+    val classLoader: ClassLoader = getClassLoader()
+    val javaClass: Class<*> = classLoader.loadClass("AppKt")
+    val kClass: KClass<*> = javaClass.kotlin
+    val primaryConstructor: KFunction<*> = kClass.primaryConstructor
+    val appkt = primaryConstructor.call()
+    println(appkt)
+}
+```
+
+* A: `AppKt@53976f5c`
+* B: `AppKt`
+* C: コンパイルエラー
+* D: 実行時エラー
