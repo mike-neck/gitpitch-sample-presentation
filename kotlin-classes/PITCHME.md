@@ -202,9 +202,9 @@ D: 実行時エラー
 
 1. `FooKt` のような kt クラスは **package and file facades** と呼ばれる特殊なクラス
 1. **package and file facades** に対するkotlin-reflectionによる操作はバージョン1.1.51時点で未サポート
-1. kotlin-reflectionがサポートしていないタイプのクラス
-  * `enum`
-  * `enum` の entry
+1. kotlin-reflectionが未サポートのクラスファイル
   * `WhenMappings`
   * lambda
   * `DefaultImpls`
+  * `enum`(一部未サポート)
+  * `enum` の entry(一部未サポート)
