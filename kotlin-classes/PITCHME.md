@@ -188,3 +188,23 @@ fun main(args: Array<String>) {
 * B: `AppKt`
 * C: コンパイルエラー
 * D: 実行時エラー
+
+---
+
+### 3. 正解
+
+D: 実行時エラー
+===
+
+---
+
+### 3. 解説
+
+1. `FooKt` のような kt クラスは **package and file facades** と呼ばれる特殊なクラス
+1. **package and file facades** に対するkotlin-reflectionによる操作はバージョン1.1.51時点で未サポート
+1. kotlin-reflectionがサポートしていないタイプのクラス
+  * `enum`
+  * `enum` の entry
+  * `WhenMappings`
+  * lambda
+  * `DefaultImpls`
