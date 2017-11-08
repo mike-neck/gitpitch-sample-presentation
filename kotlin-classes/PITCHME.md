@@ -137,16 +137,16 @@ enum class Bool(val asBoolean: Boolean) {
 }
 ```
 
-* A: 1個
-* B: 2個
-* C: 3個
-* D: 5個
+* A: 2個
+* B: 3個
+* C: 5個
+* D: 6個
 
 ---
 
 ### 3. 正解
 
-D: 5個
+C: 5個
 ===
 
 ---
@@ -191,14 +191,14 @@ fun main(args: Array<String>) {
 
 ---
 
-### 3. 正解
+### 4. 正解
 
 D: 実行時エラー
 ===
 
 ---
 
-### 3. 解説
+### 4. 解説
 
 1. `FooKt` のような kt クラスは **package and file facades** と呼ばれる特殊なクラス
 1. **package and file facades** に対するkotlin-reflectionによる操作はバージョン1.1.51時点で未サポート
