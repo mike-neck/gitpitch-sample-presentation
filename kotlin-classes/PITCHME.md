@@ -1,7 +1,10 @@
 Kotlinの
 ===
 
-Reflectionクイズ
+コンパイラーの気持ちになる
+===
+
+クイズ
 ===
 
 @mike_neck
@@ -29,8 +32,9 @@ Reflectionクイズ
 
 ### 1. コンパイルした時に作られるクラスファイルの数はいくつでしょう？
 
+ファイル名は(`Exercise1.kt`)
+
 ```kotlin
-@file:JvmName("Exercise1")
 fun main(args: Array<String>) {
     val text = message.whenNotNull { println(it) }
             .or { "hello" }
@@ -59,10 +63,10 @@ B: 2個
 
 以下の2つのファイルが作られます
 
-* `Exercise1.class`
+* `Exercise1Kt.class`
   * `@file:JvmName` により名前が指定される
 * `Exercise1$main$text$2.class`
-  * `inline` にしていない `or` 関数が受け取った関数のクラスが作られる
+  * `inline` にしていない関数が受け取った関数(lambda)のクラスが作られる
 
 ---
 
@@ -76,12 +80,10 @@ B: 2個
 ```kotlin
 interface NamedFile {
     val name: String
-    val extension: String
-    fun preciseName(): String = "$name.$extension"
+    fun greeting(): String = "Hello ${name}."
     companion object {
-        fun create(name: String, extension: String): NamedFile = object : NamedFile {
+        fun create(name: String): NamedFile = object : NamedFile {
             override val name: String get() = name
-            override val extension: String get() = extension
         }
     }
 }
