@@ -184,16 +184,16 @@ fun main(args: Array<String>) {
 }
 ```
 
-* A: `AppKt@53976f5c`
-* B: `AppKt`
-* C: コンパイルエラー
-* D: 実行時エラー
+* A: `KotlinReflectionInternalError`
+* B: `UnsupportedOperationException`
+* C: `IllegalStateException`
+* D: `AppKt@53976f5c`
 
 ---
 
 ### 4. 正解
 
-D: 実行時エラー
+B: 
 ===
 
 ---
