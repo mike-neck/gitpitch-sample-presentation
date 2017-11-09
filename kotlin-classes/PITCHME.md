@@ -17,7 +17,7 @@ Reflectionクイズ
 ### 自己紹介
 
 * 持田(@mike_neck)
-* チャットの会社でｼﾞｬｯﾊﾞ書いてる
+* directというチャットの会社(L is B)でｼﾞｬｯﾊﾞ書いてる
 * kuick-checkというHaskellのQuick CheckをKotlinに移植したライブラリー作りました
 
 ---
