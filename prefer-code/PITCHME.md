@@ -14,6 +14,7 @@
 * 好きなコードについて語っていきます
 * 理屈は特にないですが、わりと人から影響を受けています
 
+---
 
 #### 小さいメソッド、小さいクラス
 
@@ -52,21 +53,21 @@
 ```java
 List<UserScore> getDailyRanking(final LocalDate date) {
   if (!timeRepository.isBeforeToday(date)) {
-      return Collections.emptyMap();
-    }
-    final List<UserScore> userScoreList = gameDao.dailyUserScoreList(date);
-    if (userScoreList.isEmpty()) {
-      return Collections.emptyMap();
-    }
-    final Set<UserId> users = userScore.stream().map(UserScore::getUserId).collect(toSet());
-    final Collection<UserId> premiumUsers = userExternalRepository.findPremiumUsers(users);
-    if (premiumUsers.isEmpty()) {
-      return Collections.emptyMap();
-    }
-    return userScoreList.stream()
-        .filter(s -> premiumUsers.contains(s.getUserId()))
-        .sorted((l,r) -> Long.compare(l.getScore(), r.getScore()))
-        .collect(toList());
+    return Collections.emptyMap();
+  }
+  final List<UserScore> userScoreList = gameDao.dailyUserScoreList(date);
+  if (userScoreList.isEmpty()) {
+    return Collections.emptyMap();
+  }
+  final Set<UserId> users = userScore.stream().map(UserScore::getUserId).collect(toSet());
+  final Collection<UserId> premiumUsers = userExternalRepository.findPremiumUsers(users);
+  if (premiumUsers.isEmpty()) {
+    return Collections.emptyMap();
+  }
+  return userScoreList.stream()
+    .filter(s -> premiumUsers.contains(s.getUserId()))
+    .sorted((l,r) -> Long.compare(l.getScore(), r.getScore()))
+    .collect(toList());
 }
 ```
 
