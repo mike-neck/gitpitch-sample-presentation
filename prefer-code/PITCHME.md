@@ -43,13 +43,16 @@
 
 ### 振る舞いをもつクラス
 
-* getter/setterしかないクラスは◯ね
+* getter/setterしかないクラスはライブラリーが要求するクラスだけに絞るべきだと思う(JPA/Jackson)
 * 値を持っているクラスが持っている値を操作する = オブジェクト指向の考え方
 * `if`/`switch` 文の後にgetterを使っていたら、 `if` の対象となったクラスにその振る舞いを持てないか検討する
+* ちなみに `Collecfion` の `for` 文はgetter/setterと同じ意味だと思う
 
 ---
 
 ### 何か実例っぽいの
+
+* こんなコードをリファクタリングします
 
 ```java
 List<UserScore> getDailyRanking(final LocalDate date) {
@@ -115,5 +118,113 @@ final List<UserScore> userScoreList
     = userScoreRepository.getDailyScore(date);
 ```
 
+---
 
+### 何か実例っぽいの
+
+* `Collection` の `for` 文はgetter/setterと同じだから
+* `List<UserScore>` をくるっと包んだクラス `UserScoreList` クラスを導入
+
+```java
+final List<UserScore> userScoreList
+    = userScoreRepository.getDailyScore(date);
+```
+
+↓
+
+```java
+final UserScoreList userScoreList
+    = userScoreRepository.getDailyScore(date);
+```
+
+---
+
+### 何か実例っぽいの
+
+* そうすると `Stream` を使っているところは軒並み getter を使うことになってしまうので
+
+```java
+final Set<UserId> users = userScore.getList().stream().map(UserScore::getUserId).collect(toSet());
+```
+
+* `UserScoreList` のメソッドにしてしまう
+
+```java
+final Set<UserId> users = userScore.getDistinctUserId();
+```
+
+---
+
+### 何か実例っぽいの
+
+* 同様に最後の長いやつも
+
+```java
+if (premiumUsers.isEmpty()) {
+  return Collections.emptyMap();
+}
+return userScoreList.stream()
+  .filter(s -> premiumUsers.contains(s.getUserId()))
+  .sorted((l,r) -> Long.compare(l.getScore(), r.getScore()))
+  .collect(toList());
+```
+
+* 一つ前のemptyチェックも含めてリファクタリング
+
+```java
+return userScoreList.findAllIn(premiumUsers);
+```
+
+---
+
+### 何か実例っぽいの
+
+* リファクタリング前
+
+```java
+List<UserScore> getDailyRanking(final LocalDate date) {
+  final LocalDate today = timeRepository.getToday();
+  if (date.isBefore(today)) {
+    return Collections.emptyMap();
+  }
+  final List<UserScore> userScoreList = gameDao.dailyUserScoreList(date);
+  if (userScoreList.isEmpty()) {
+    return Collections.emptyMap();
+  }
+  final Set<UserId> users = userScore.stream().map(UserScore::getUserId).collect(toSet());
+  final Collection<UserId> premiumUsers = userExternalRepository.findPremiumUsers(users);
+  if (premiumUsers.isEmpty()) {
+    return Collections.emptyMap();
+  }
+  return userScoreList.stream()
+    .filter(s -> premiumUsers.contains(s.getUserId()))
+    .sorted((l,r) -> Long.compare(l.getScore(), r.getScore()))
+    .collect(toList());
+}
+```
+
+---
+
+### 何か実例っぽいの
+
+* リファクタリング後
+
+```java
+List<UserScore> getDailyRanking(final LocalDate date) {
+  final UserScoreList userScoreList
+      = userScoreRepository.getDailyScore(date);
+  final Set<UserId> users = userScore.getDistinctUserId();
+  final Collection<UserId> premiumUsers = userExternalRepository.findPremiumUsers(users);
+  return userScoreList.findAllIn(premiumUsers);
+}
+```
+
+---
+
+## まとめ
+
+* 小さいメソッド/クラスが好き
+* 抽象クラスではなくインターフェースが好き
+* privateいらんのでは
+* 振る舞いのあるクラスが好き
 
