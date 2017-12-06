@@ -16,7 +16,7 @@
 
 ---
 
-#### 小さいメソッド、小さいクラス
+### 小さいメソッド、小さいクラス
 
 * 小さいメソッド、小さいクラスが好きです
 * ただ単純に何をやっているか理解できないだけです
@@ -24,23 +24,24 @@
 
 ---
 
-#### クラスを継承するよりはインターフェースを実装
+### クラスを継承するよりはインターフェースを実装
 
 * 何らかのクラスを継承しているクラスを改造するのはわりと怖い
 * 元のクラスをいじって、継承しているクラスに影響が出たりとか
 * 継承しているクラスで欲しい値を取りたいがために、元のクラスを無理矢理いじったりとか
+* どうしても実装しないといけない場合は、移譲できないか検討する
 
 ---
 
-#### 全部publicメソッドでいいと思ってる
+### 全部publicメソッドでいいと思ってる
 
 * (自分もprivateメソッドを作ってしまうというのは置いといて)
 * privateメソッドの存在はそのクラスが元々持っていた意味が大きくなって複数の意味をもってしまったという状態
-* privateメソッドの意味を表すクラスを作ってpublicメソッドにする
+* 新しく作られたメソッド/役割の意味を表す別のクラスを作ってpublicメソッドにする
 
 ---
 
-#### 振る舞いをもつクラス
+### 振る舞いをもつクラス
 
 * getter/setterしかないクラスは◯ね
 * 値を持っているクラスが持っている値を操作する = オブジェクト指向の考え方
@@ -48,11 +49,12 @@
 
 ---
 
-#### 何か実例っぽいの
+### 何か実例っぽいの
 
 ```java
 List<UserScore> getDailyRanking(final LocalDate date) {
-  if (!timeRepository.isBeforeToday(date)) {
+  final LocalDate today = timeRepository.getToday();
+  if (date.isBefore(today)) {
     return Collections.emptyMap();
   }
   final List<UserScore> userScoreList = gameDao.dailyUserScoreList(date);
@@ -70,4 +72,27 @@ List<UserScore> getDailyRanking(final LocalDate date) {
     .collect(toList());
 }
 ```
+
+---
+
+### 何か実例っぽいの
+
+* `LocalDate` を取ってきて `LocalDate` と比較して何かをする
+* のではなくて、データを取得するオブジェクトが比較結果を返してほしい
+
+```java
+final LocalDate today = timeRepository.getToday();
+if (date.isBefore(today)) {
+  return Collections.emptyMap();
+}
+```
+
+↓
+
+```java
+if (!timeRepository.isBeforeOfToday(date)) {
+  return Collections.emptyMap();
+}
+```
+
 
