@@ -108,6 +108,8 @@ final List<UserScore> userScoreList = gameDao.dailyUserScoreList(date);
 if (userScoreList.isEmpty()) { ... }
 ```
 
+* `GameDao` と `TimeRepository` を持って `UserScore` を取ってくるようなクラス `UserScoreRepository` を作って…
+
 ```java
 final List<UserScore> userScoreList
     = userScoreRepository.getDailyScore(date);
