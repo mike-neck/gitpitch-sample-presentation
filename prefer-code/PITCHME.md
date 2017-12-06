@@ -95,4 +95,23 @@ if (!timeRepository.isBeforeOfToday(date)) {
 }
 ```
 
+---
+
+### 何か実例っぽいの
+
+* 最初の2箇所でほしいのは結局指定日のユーザーのスコアなので…
+
+```java
+final LocalDate today = timeRepository.getToday();
+if (date.isBefore(today)) { ... }
+final List<UserScore> userScoreList = gameDao.dailyUserScoreList(date);
+if (userScoreList.isEmpty()) { ... }
+```
+
+```java
+final List<UserScore> userScoreList
+    = userScoreRepository.getDailyScore(date);
+```
+
+
 
