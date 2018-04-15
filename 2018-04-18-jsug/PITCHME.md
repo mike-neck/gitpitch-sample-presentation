@@ -27,11 +27,15 @@
 * クラスをロードした状態をファイルにダンプしておいて、複数のJVMで共有する仕組み
 * Java 8 からあったコマーシャルフィーチャーで、 Java 10 から OpenJDK で利用可能になった
 
+---
+
 #### やること
 
 * アーカイブ対象のクラスのリスト(テキストファイル)を作る
 * アーカイブファイル(バイナリーファイル)を作る
 * アーカイブを読み込む
+
+---
 
 #### アーカイブ対象のクラスのリストを作る
 
@@ -41,6 +45,8 @@
 * `-XX:+UseAppCDS`
 * `-Xshare:off`
 * `-XX:DumpLoadedClassList={classList}`
+
+---
 
 #### アーカイブファイルを作る
 
@@ -52,6 +58,8 @@
 * `-XX:SharedClassListFile={classList}`
 * `-XX:SharedArchiveFile={archiveFile}`
 
+---
+
 #### アーカイブを読み込む
 
 以下のJVMオプションを指定してアプリケーションを起動する
@@ -60,6 +68,8 @@
 * `-XX:+UseAppCDS`
 * `-Xshare:on`
 * `-XX:SharedArchiveFile={archiveFile}`
+
+---
 
 #### 
 
